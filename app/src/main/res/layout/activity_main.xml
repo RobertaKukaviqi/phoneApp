@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_gray"
+    tools:context=".activities.MainActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.MainActivity">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabs"
+        tools:visibility="gone"
+        android:background="@color/light_blue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabTextColor="@color/white"
+        app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+        app:tabIndicatorColor="@color/green"
+        app:tabSelectedTextColor="@color/green"/>
+
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpager"
+        tools:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <TextView
+        android:textColor="@color/white"
+        android:gravity="center_horizontal"
+        android:padding="20dp"
+        android:id="@+id/empty_tv"
+        android:textSize="18sp"
+        android:text="@string/no_watches_connected"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            app:backgroundTint="@color/green"
+            android:src="@drawable/watch_icon"
+            android:layout_margin="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:id="@+id/add_watch_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="48dp"
+        android:tint="@color/white"
+        android:src="@drawable/add_icon"
+        android:layout_width="15dp"
+        android:layout_height="15dp" />
+
+</RelativeLayout>

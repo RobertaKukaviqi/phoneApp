@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">HeartBeep</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="no_watches_connected">No watches connected!</string>
+    <string name="no_watches_available">No watches available!</string>
+    <string name="high_risk">High Risk</string>
+    <string name="no_risk">You\'re good to go!</string>
+    <string name="medium_risk">Medium Risk</string>
+    <string name="low_risk">Low Risk</string>
+</resources>
