@@ -28,6 +28,7 @@ import org.threeten.bp.temporal.ChronoUnit;
 
 import java.util.ArrayList;
 import java.util.Map;
+import java.util.Random;
 
 import roberta.heartbeepapp.R;
 import roberta.heartbeepapp.models.HeartRateValueEntity;
@@ -330,27 +331,33 @@ public class HeartRiskCalculationFragment extends Fragment {
         int dataSize = data.size();
 
         if (highRiskCount > dataSize * 0.40) {
-            riskTypeTv.setText(getString(R.string.high_risk));
+            riskTypeTv.setText(generateExpresion(R.array.high_risk));
             riskTypeTv.setTextColor(ContextCompat.getColor(getContext(), R.color.red));
         } else if (mediumRiskCount > dataSize * 0.50) {
-            riskTypeTv.setText(getString(R.string.medium_risk));
+            riskTypeTv.setText(generateExpresion(R.array.medium_risk));
             riskTypeTv.setTextColor(ContextCompat.getColor(getContext(), R.color.orange));
         } else if (lowRiskCount > dataSize * 0.75) {
-            riskTypeTv.setText(getString(R.string.low_risk));
+            riskTypeTv.setText(generateExpresion(R.array.low_risk));
             riskTypeTv.setTextColor(ContextCompat.getColor(getContext(), R.color.yellow));
         } else if (highRiskCount > dataSize * 0.35 && mediumRiskCount > dataSize * 0.35) {
-            riskTypeTv.setText(getString(R.string.high_risk));
+            riskTypeTv.setText(generateExpresion(R.array.high_risk));
             riskTypeTv.setTextColor(ContextCompat.getColor(getContext(), R.color.red));
         } else if (mediumRiskCount > dataSize * 0.35 && highRiskCount > 0.20) {
-            riskTypeTv.setText(getString(R.string.medium_risk));
+            riskTypeTv.setText(generateExpresion(R.array.medium_risk));
             riskTypeTv.setTextColor(ContextCompat.getColor(getContext(), R.color.orange));
         } else if (lowRiskCount > dataSize * 0.20 && (mediumRiskCount > dataSize * 0.20 || highRiskCount > 0.20)) {
-            riskTypeTv.setText(getString(R.string.low_risk));
+            riskTypeTv.setText(generateExpresion(R.array.low_risk));
             riskTypeTv.setTextColor(ContextCompat.getColor(getContext(), R.color.yellow));
         } else {
-            riskTypeTv.setText(getString(R.string.no_risk));
+            riskTypeTv.setText(generateExpresion(R.array.no_risk));
             riskTypeTv.setTextColor(ContextCompat.getColor(getContext(), R.color.green));
         }
+    }
+
+    private String generateExpresion(int type){
+        String[] array = getResources().getStringArray(type);
+        int random = new Random().nextInt(array.length);
+        return array[random];
     }
 
     private double lowerThresholdLowRisk() {

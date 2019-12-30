@@ -171,7 +171,10 @@ public class LoginActivity extends AppCompatActivity {
 
     private void updateUI(FirebaseUser currentUser){
         showLoadingScreen(false);
-        if(currentUser != null && currentUser.getDisplayName() != null && currentUser.getDisplayName().length() > 0){
+        if(currentUser != null) {
+            Log.e("CurrentUser", currentUser.toString());
+        }
+        if(currentUser != null){
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
             finish();

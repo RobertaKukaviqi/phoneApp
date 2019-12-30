@@ -1,11 +1,31 @@
 <resources>
     <string name="app_name">HeartBeep</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="no_watches_connected">No watches connected!</string>
     <string name="no_watches_available">No watches available!</string>
     <string name="high_risk">High Risk</string>
     <string name="no_risk">You\'re good to go!</string>
     <string name="medium_risk">Medium Risk</string>
     <string name="low_risk">Low Risk</string>
+    <string-array name="low_risk">
+        <item>Eat a healthy diet. Try to limit saturated fats, foods high in sodium, and added sugars. Eat plenty of fresh fruit, vegetables, and whole grains. </item>
+        <item>Limit the alcohol. Don\'t take more than 2 alcoholic drinks per day.
+Make sure that you get enough sleep. If you don\'t get enough sleep, you raise your risk of high blood pressure, obesity, and diabetes. Make sure to get 7 to 9 hours per sleep every night.</item>
+        <item>Exercise regularly. Exercising strengthens your heart and improves your circulation. It lowers cholesterol and blood pressure, two factors which directly affect the health of your heart.</item>
+    </string-array>
+    <string-array name="medium_risk">
+        <item>Know your numbers! Always keep your blood pressure, cholesterol, and glucose levels in check!</item>
+        <item>Pay attention to your symptoms! If you feel extremely tired or fatigue, changes in your heart rhythm, shortness of breath, go see a doctor!</item>
+        <item>Reduce stress! Stress is a major factor in heart diseases and strokes. It may induce overeating, overdrinking, oversmoking, and all factors that affect the health of your heart. </item>
+    </string-array>
+    <string-array name="high_risk">
+        <item>See a doctor immediately! </item>
+        <item>See a doctor immediately! </item>
+        <item>The numbers show that you have a high risk of having heart diseases, therefore you need to keep yourself under check!</item>
+    </string-array>
+    <string-array name="no_risk">
+        <item>You\'re good to go! </item>
+        <item>Your heart is satisfied with how you are treating yourself! </item>
+        <item>Keep exercising, continue your nutritious diet, and stay away from smoking and alcohol!</item>
+    </string-array>
 </resources>

@@ -1,10 +1,10 @@
 package roberta.heartbeepapp;
 
-import android.app.Application;
+import androidx.multidex.MultiDexApplication;
 
 import com.jakewharton.threetenabp.AndroidThreeTen;
 
-public class HeartBeepApplication extends Application {
+public class HeartBeepApplication extends MultiDexApplication {
 
     @Override
     public void onCreate() {

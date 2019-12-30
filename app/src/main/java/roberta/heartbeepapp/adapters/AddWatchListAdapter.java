@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -77,12 +79,14 @@ public class AddWatchListAdapter extends RecyclerView.Adapter<AddWatchListAdapte
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                        String userName = "";
+                        if(user.getDisplayName() != null) userName = user.getDisplayName();
                         FirebaseDatabase.getInstance().getReference("users")
                                 .child("wear")
                                 .child(entity.getWatchuUserID())
                                 .child("requests")
                                 .child(Objects.requireNonNull(user).getUid())
-                                .setValue(user.getDisplayName())
+                                .setValue(userName)
                                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {
